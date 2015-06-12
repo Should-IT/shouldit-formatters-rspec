@@ -13,8 +13,7 @@ Configure RSpec to write results to a file
     require 'shouldit/formatters'
 
     RSpec.configure do |config|
-      config.output_stream = File.open('spec/results.json', 'w')
-      config.formatter = ShouldIT::Formatters::RSpecFormatter
+      config.add_formatter ShouldIT::Formatters::RSpecFormatter, 'spec/results.json'
     end
 
 Configure ShouldIT to watch for changes in `shouldit.conf.json`
